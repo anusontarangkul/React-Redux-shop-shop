@@ -1,6 +1,8 @@
 import { ADD_TO_CART, ADD_MULTIPLE_TO_CART, CLEAR_CART, UPDATE_CART_QUANTITY, REMOVE_FROM_CART } from './cartTypes'
 
-const cartReducer = (state, action) => {
+const initialState = [];
+
+const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
             return

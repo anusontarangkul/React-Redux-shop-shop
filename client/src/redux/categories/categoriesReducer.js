@@ -1,6 +1,8 @@
 import { UPDATE_CATEGORIES } from './categoriesTypes'
 
-const categoriesReducer = (state, action) => {
+const initialState = [];
+
+const categoriesReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_CATEGORIES:
             return
