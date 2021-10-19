@@ -20,9 +20,13 @@ export const clearCart = () => {
     }
 }
 
-export const updateCart = () => {
+export const updateCartQuantity = (_id, purchaseQuantity) => {
     return {
-        type: UPDATE_CART_QUANTITY
+        type: UPDATE_CART_QUANTITY,
+        payload: {
+            _id,
+            purchaseQuantity
+        }
     }
 }
 

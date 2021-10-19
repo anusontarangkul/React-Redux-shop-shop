@@ -14,7 +14,17 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
 
+// redux
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart, updateCartQuantity, addToCart, updateProduct } from '../redux'
+
 function Detail() {
+  // redux
+  const dispatchRedux = useDispatch();
+  const productsRedux = useSelector(state => state.products.products)
+  const cartRedux = useSelector(state => state.cart.cart)
+
+
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 

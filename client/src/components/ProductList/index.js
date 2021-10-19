@@ -10,7 +10,15 @@ import spinner from '../../assets/spinner.gif';
 
 import {idbPromise} from '../../utils/helpers';
 
+// redux
+import { useSelector, useDispatch } from 'react-redux';
+import {updateProduct} from '../../redux'
+
 function ProductList() {
+  // redux
+  const dispatchRedux = useDispatch();
+  const products = useSelector(state => state.products.products)
+
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state

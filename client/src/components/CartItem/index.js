@@ -3,7 +3,12 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
+//redux
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart, updateCartQuantity } from '../../redux'
+
 const CartItem = ({ item }) => {
+    const dispatchRedux = useDispatch();
 
     const [, dispatch] = useStoreContext();
 

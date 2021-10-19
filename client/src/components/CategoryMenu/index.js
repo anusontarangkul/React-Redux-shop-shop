@@ -9,7 +9,15 @@ import {
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
+// redux
+import { useSelector, useDispatch } from 'react-redux';
+import { updateCategories, updateCurrentCategory } from '../../redux'
+
 function CategoryMenu() {
+  // redux 
+  const dispatchRedux = useDispatch();
+  const cart = useSelector(state => state.cart.cart)
+
   const [state, dispatch] = useStoreContext();
 
   const { categories } = state;

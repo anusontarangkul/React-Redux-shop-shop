@@ -5,8 +5,15 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 
+// redux
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, updateCartQuantity } from '../../redux'
 
 function ProductItem(item) {
+  // redux
+  const dispatchRedux = useDispatch();
+  const cartRedix = useSelector(state => state.cart.cart)
+
   const [state, dispatch] = useStoreContext();
   const { cart } = state;
 
