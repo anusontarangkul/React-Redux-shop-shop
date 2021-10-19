@@ -8,9 +8,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateCartQuantity } from '../../redux'
 
 const CartItem = ({ item }) => {
-    const dispatchRedux = useDispatch();
+    const dispatch = useDispatch();
 
-    const [, dispatch] = useStoreContext();
+    // const [, dispatch] = useStoreContext();
 
     const removeFromCart = item => {
         dispatch({

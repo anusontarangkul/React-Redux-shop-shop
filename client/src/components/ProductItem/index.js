@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 
 import { useStoreContext } from '../../utils/GlobalState';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+// import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../redux/actions';
 
 // redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,10 +12,10 @@ import { addToCart, updateCartQuantity } from '../../redux'
 
 function ProductItem(item) {
   // redux
-  const dispatchRedux = useDispatch();
-  const cartRedix = useSelector(state => state.cart.cart)
+  const dispatch = useDispatch();
+  const state = useSelector(state => state)
 
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
   const { cart } = state;
 
   const addToCart = () => {

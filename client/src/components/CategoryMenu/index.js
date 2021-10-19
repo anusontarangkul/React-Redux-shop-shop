@@ -15,10 +15,11 @@ import { updateCategories, updateCurrentCategory } from '../../redux'
 
 function CategoryMenu() {
   // redux 
-  const dispatchRedux = useDispatch();
-  const cart = useSelector(state => state.cart.cart)
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  console.log(state)
 
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
 
   const { categories } = state;
 

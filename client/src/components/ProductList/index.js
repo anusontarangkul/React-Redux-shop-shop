@@ -16,10 +16,11 @@ import {updateProduct} from '../../redux'
 
 function ProductList() {
   // redux
-  const dispatchRedux = useDispatch();
-  const products = useSelector(state => state.products.products)
+  const dispatch = useDispatch();
+  const state = useSelector(state => state)
+  // const products = useSelector(state => state.products.products)
 
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state
 
