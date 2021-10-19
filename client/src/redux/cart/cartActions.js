@@ -1,14 +1,16 @@
 import { ADD_TO_CART, ADD_MULTIPLE_TO_CART, CLEAR_CART, UPDATE_CART_QUANTITY, REMOVE_FROM_CART } from './cartTypes'
 
-export const addToCart = () => {
+export const addToCart = product => {
     return {
-        type: ADD_TO_CART
+        type: ADD_TO_CART,
+        payload: product
     }
 }
 
-export const addToMultipleCart = () => {
+export const addToMultipleCart = products => {
     return {
-        type: ADD_MULTIPLE_TO_CART
+        type: ADD_MULTIPLE_TO_CART,
+        payload: products
     }
 }
 
@@ -24,8 +26,9 @@ export const updateCart = () => {
     }
 }
 
-export const removeFromCart = () => {
+export const removeFromCart = id => {
     return {
-        type: REMOVE_FROM_CART
+        type: REMOVE_FROM_CART,
+        payload: id
     }
 }

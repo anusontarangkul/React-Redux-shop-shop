@@ -1,11 +1,16 @@
 import { UPDATE_PRODUCTS } from './productTypes';
 
-const intialState = []
+const intialState = {
+    products: []
+}
 
 const productsReducer = (state = intialState, action) => {
     switch (action.type) {
         case UPDATE_PRODUCTS:
-            return;
+            return {
+                ...state,
+                products: [...action.payload]
+            }
         default:
             return state;
     }

@@ -1,7 +1,8 @@
 import { UPDATE_CATEGORIES } from './categoriesTypes'
 
-export const updateCategories = () => {
+export const updateCategories = categories => {
     return {
-        type: UPDATE_CATEGORIES
+        type: UPDATE_CATEGORIES,
+        payload: categories
     }
 }
