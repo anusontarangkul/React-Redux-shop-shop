@@ -3,29 +3,26 @@ import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import Cart from '../components/Cart';
-import { useStoreContext } from '../utils/GlobalState';
+
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_PRODUCTS,
-} from '../utils/actions';
+} from '../redux/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
 
-// redux
+
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, updateCartQuantity, addToCart, updateProduct } from '../redux'
 
 function Detail() {
-  // redux
-  const dispatchRedux = useDispatch();
-  const productsRedux = useSelector(state => state.products.products)
-  const cartRedux = useSelector(state => state.cart.cart)
+
+  const dispatch = useDispatch();
+  const state = useSelector(state => state)
 
 
-  const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});
